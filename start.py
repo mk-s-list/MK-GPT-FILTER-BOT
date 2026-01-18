@@ -1,8 +1,6 @@
-from pyrogram import Client, filters
-from database.mongo import settings
+from bot import app
+from web import start_web
 
-@Client.on_message(filters.command("start"))
-async def start_cmd(client, message):
-    data = await settings.find_one({"_id": "START"})
-    text = data["text"] if data else "👋 Welcome to Auto Filter Bot"
-    await message.reply_text(text)
+if __name__ == "__main__":
+    start_web()
+    app.run()
