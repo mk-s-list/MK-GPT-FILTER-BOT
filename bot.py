@@ -1,7 +1,6 @@
 import asyncio
 from pyrogram import Client, idle
 from config import API_ID, API_HASH, BOT_TOKEN
-from web.keep_alive import keep_alive
 
 app = Client(
     "AutoFilterBot",
@@ -13,7 +12,6 @@ app = Client(
 
 async def main():
     await app.start()
-    keep_alive()
     print("Bot started successfully")
     await idle()
 
