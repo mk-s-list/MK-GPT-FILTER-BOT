@@ -1,0 +1,7 @@
+from pyrogram import filters
+from pyrogram.types import Message
+from bot import app
+
+@app.on_message(filters.command("start"))
+async def start_cmd(client, message: Message):
+    await message.reply_text("Bot is alive 🔥")
